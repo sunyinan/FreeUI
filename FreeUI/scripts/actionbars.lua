@@ -4,9 +4,9 @@ local F, C, L = unpack(select(2, ...))
 
 if not C.actionbars.enable then return end
 
---[[ MainMenuBar ]]
+--[[ Bottom Right bar ]]
 
-local bar1 = CreateFrame("Frame", "FreeUI_MainMenuBar", UIParent, "SecureHandlerStateTemplate")
+local bar3 = CreateFrame("Frame", "FreeUI_MainMenuBar", UIParent, "SecureHandlerStateTemplate")
 bar1:SetWidth(323)
 bar1:SetHeight(26)
 
@@ -18,7 +18,7 @@ MainMenuBar.slideOut.IsPlaying = function() return true end
 for i = 1, NUM_ACTIONBAR_BUTTONS do
 	local button = _G["ActionButton"..i]
 	button:ClearAllPoints()
-	button:SetSize(26, 26)
+	button:SetSize(40, 40)
 	if i == 1 then
 		button:SetPoint("BOTTOMLEFT", bar1, "BOTTOMLEFT", 0, 0)
 	else
@@ -41,7 +41,7 @@ MultiBarBottomLeft:EnableMouse(false)
 for i = 1, NUM_ACTIONBAR_BUTTONS do
 	local button = _G["MultiBarBottomLeftButton"..i]
 	button:ClearAllPoints()
-	button:SetSize(26, 26)
+	button:SetSize(40, 40)
 	if i == 1 then
 		button:SetPoint("BOTTOMLEFT", bar2, "BOTTOMLEFT", 0, 0)
 	else
@@ -52,9 +52,9 @@ end
 
 RegisterStateDriver(bar2, "visibility", "[petbattle][vehicleui][overridebar][possessbar,@vehicle,exists] hide; show")
 
---[[ Bottom Right bar ]]
+--[[ MainMenuBar ]]
 
-local bar3 = CreateFrame("Frame", "FreeUI_MultiBarBottomRight", UIParent, "SecureHandlerStateTemplate")
+local bar1 = CreateFrame("Frame", "FreeUI_MultiBarBottomRight", UIParent, "SecureHandlerStateTemplate")
 bar3:SetWidth(323)
 bar3:SetHeight(26)
 
@@ -64,7 +64,7 @@ MultiBarBottomRight:EnableMouse(false)
 for i= 1, NUM_ACTIONBAR_BUTTONS do
 	local button = _G["MultiBarBottomRightButton"..i]
 	button:ClearAllPoints()
-	button:SetSize(26, 26)
+	button:SetSize(40, 40)
 	if i == 1 then
 		button:SetPoint("BOTTOMLEFT", bar3, "BOTTOMLEFT", 0, 0)
 	else
@@ -112,7 +112,7 @@ MultiBarRight:EnableMouse(false)
 for i = 1, NUM_ACTIONBAR_BUTTONS do
 	local button = _G["MultiBarRightButton"..i]
 	button:ClearAllPoints()
-	button:SetSize(26, 26)
+	button:SetSize(40, 40)
 	if i == 1 then
 		button:SetPoint("TOPLEFT", bar4, 0,0)
 	else
@@ -136,7 +136,7 @@ MultiBarLeft:EnableMouse(false)
 for i = 1, NUM_ACTIONBAR_BUTTONS do
 	local button = _G["MultiBarLeftButton"..i]
 	button:ClearAllPoints()
-	button:SetSize(26, 26)
+	button:SetSize(40, 40)
 	if i == 1 then
 		button:SetPoint("TOPLEFT", bar5, 0,0)
 	else
@@ -172,7 +172,7 @@ for i = 1, numOverride do
 		break
 	end
 	bu:ClearAllPoints()
-	bu:SetSize(26, 26)
+	bu:SetSize(40, 40)
 	if i == 1 then
 		bu:SetPoint("BOTTOMLEFT", override, "BOTTOMLEFT")
 	else
@@ -231,7 +231,7 @@ for i = 1, numpet do
 	local cd = _G["PetActionButton"..i.."Cooldown"]
 
 	button:ClearAllPoints()
-	button:SetSize(26, 26)
+	button:SetSize(40, 40)
 
 	if i == 1 then
 		button:SetPoint("BOTTOMLEFT", petbar, 0,0)
@@ -393,7 +393,7 @@ end
 --[[ Extra bar ]]
 
 local barextra = CreateFrame("Frame", "FreeUI_ExtraActionBar", UIParent, "SecureHandlerStateTemplate")
-barextra:SetSize(39, 39)
+barextra:SetSize(40, 40)
 barextra:SetPoint("BOTTOM", bar1, "TOP", 0, 30)
 
 ExtraActionBarFrame:SetParent(barextra)
@@ -402,7 +402,7 @@ ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetPoint("CENTER", 0, 0)
 ExtraActionBarFrame.ignoreFramePositionManager = true
 
-ExtraActionButton1:SetSize(39, 39)
+ExtraActionButton1:SetSize(40, 40)
 
 RegisterStateDriver(barextra, "visibility", "[extrabar] show; hide")
 
